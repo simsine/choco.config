@@ -1,4 +1,5 @@
 #! MUST RUN WITH POWERSHELL AS ADMINISTRATOR !#
+#Requires -RunAsAdministrator
 
 Write-Output "Checking if chocolatey is installed..."
 try {
