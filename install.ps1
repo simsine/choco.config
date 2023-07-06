@@ -22,9 +22,16 @@ try {
 
 $prompt = Read-Host -Prompt "Do you wish to install the packages listed in the choco.config file? | [y]es / [n]o"
 if ($prompt -eq "y" -or "Y" -or "yes" -or "YES") {
+    Write-Output "Installing all packages. This might take a while"
     # Install choco packages from config file
     choco.exe install .\config\choco.config
 }else{
     Write-Output "Install canceled, exiting."
     Exit
+}
+
+$prompt = Read-Host -Prompt "Do you wish to install the fonts listed in the font directory? | [y]es / [n]o"
+if ($prompt -eq "y" -or "Y" -or "yes" -or "YES") {
+    # Install choco packages from config file
+    Invoke-Item .\font\CaskaydiaCove-Regular.ttf
 }
