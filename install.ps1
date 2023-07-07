@@ -30,8 +30,14 @@ if ($prompt -eq "y" -or "Y" -or "yes" -or "YES") {
     Exit
 }
 
-$prompt = Read-Host -Prompt "Do you wish to install the fonts listed in the font directory? | [y]es / [n]o"
+$prompt = Read-Host -Prompt "Do you wish to install the nerd-font provided? | [y]es / [n]o"
 if ($prompt -eq "y" -or "Y" -or "yes" -or "YES") {
-    # Install choco packages from config file
-    Invoke-Item .\font\CaskaydiaCove-Regular.ttf
+    # Open prompt to install nerdfont
+    Invoke-Item .\config\font\CaskaydiaCove-Regular.ttf
+}
+
+$prompt = Read-Host -Prompt "Do you wish to use the provided powershell profile containting oh-my-posh and terminal-icons? | [y]es / [n]o"
+if ($prompt -eq "y" -or "Y" -or "yes" -or "YES") {
+    # Copy powershell profile
+    Copy-Item -Path ".\config\Microsoft.PowerShell_profile.ps1" -Destination $PROFILE
 }
