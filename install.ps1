@@ -41,3 +41,9 @@ if ($prompt -eq "y" -or "Y" -or "yes" -or "YES") {
     # Copy powershell profile
     Copy-Item -Path ".\config\Microsoft.PowerShell_profile.ps1" -Destination $PROFILE
 }
+
+$prompt = Read-Host -Prompt "Do you wish to use the provided powershell profile containting oh-my-posh and terminal-icons? | [y]es / [n]o"
+if ($prompt -eq "y" -or "Y" -or "yes" -or "YES") {
+    # Copy winfetch config
+    Copy-Item -Path ".\config\winfetch\config.ps1" -Destination "~\.config\winfetch"
+}
