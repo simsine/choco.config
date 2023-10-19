@@ -37,7 +37,7 @@ if ($yes -contains $prompt) {
     Invoke-Item .\config\font\CaskaydiaCove-Regular.ttf
 }
 
-$prompt = Read-Host -Prompt "Do you wish to use the provided powershell profile containting oh-my-posh and terminal-icons? | y/N"
+$prompt = Read-Host -Prompt "Do you wish to use the provided powershell profile? | y/N"
 if ($yes -contains $prompt) {
     # Copy powershell profile
     Copy-Item -Path ".\config\pwsh\Microsoft.PowerShell_profile.ps1" -Destination $PROFILE
@@ -47,4 +47,10 @@ $prompt = Read-Host -Prompt "Do you wish to use the provided winfetch configs? |
 if ($yes -contains $prompt) {
     # Copy winfetch config
     Copy-Item -Path ".\config\winfetch\config.ps1" -Destination (New-item -Name "winfetch" -Type Directory -Path "~\.config\")
+}
+
+$prompt = Read-Host -Prompt "Do you wish to use the provided starship config? | y/N"
+if ($yes -contains $prompt) {
+    # Copy starship config
+    Copy-Item -Path "./config/starship/starship.toml" -Destination "~\.config\"
 }
