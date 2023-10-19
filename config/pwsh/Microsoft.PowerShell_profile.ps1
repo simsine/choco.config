@@ -1,5 +1,5 @@
 # Display winfetch-info
-winfetch.ps1
+# winfetch.ps1
 
 # Fancy terminal icons
 Import-Module -Name terminal-icons
